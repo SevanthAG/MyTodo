@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { type Request, type Response, type NextFunction } from "express";
 import type { UserJWT } from "./type";
 
-const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const token = req.headers.token as string;
 
     if (!token) {
@@ -26,6 +26,4 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-module.exports = {
-    authMiddleware
-};
+
