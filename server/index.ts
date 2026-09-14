@@ -3,6 +3,7 @@ import express, { type Express, type Request, type Response } from 'express';
 import { Pool } from "pg";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import cors from "cors";
 
 declare global {
   namespace Express {
@@ -12,11 +13,12 @@ declare global {
   }
 }
 
-export {};
+export { };
 
 const app: Express = express();
 const port = 3000;
 app.use(express.json());
+app.use(cors());
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
