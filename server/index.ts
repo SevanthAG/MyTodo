@@ -4,6 +4,16 @@ import { Pool } from "pg";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+declare global {
+  namespace Express {
+    interface Request {
+      userId: string;
+    }
+  }
+}
+
+export {};
+
 const app: Express = express();
 const port = 3000;
 app.use(express.json());
