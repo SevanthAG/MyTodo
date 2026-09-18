@@ -12,6 +12,7 @@ export function DeleteTodo({
   onDelete,
 }: DeleteTodoProps) {
   const deleteTodo = async () => {
+    const url = import.meta.env.VITE_API_URL
     try {
       const token = localStorage.getItem("token");
 
@@ -25,7 +26,7 @@ export function DeleteTodo({
       }
 
       await axios.delete(
-        `http://localhost:3000/todos/${id}`,
+        `${url}/todos/${id}`,
         {
           headers: {
             token,

@@ -23,6 +23,7 @@ export function UpdateTodo({
   const [description, setDescription] = useState(currentDescription);
 
   const updateTodo = async () => {
+    const url = import.meta.env.VITE_API_URL
     try {
       if (!title.trim()) {
         toast.add({
@@ -45,7 +46,7 @@ export function UpdateTodo({
       }
 
       await axios.put(
-        `http://localhost:3000/todos/${id}`,
+        `${url}/todos/${id}`,
         {
           title,
           description,
