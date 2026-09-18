@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "bun --watch index.ts",
-     "build": "bun build src/index.ts --outdir dist",
+     "build": "bun build index.ts --outdir dist --target bun",
     "start": "bun run dist/index.js"
   }
 }
