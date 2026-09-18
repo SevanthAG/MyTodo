@@ -25,6 +25,13 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
+//health
+app.get('/health',(_,res)=>{
+res.status(200).json({
+  message:"server is healthy"
+})
+})
+
 //Auth
 app.post('/signup', async (req, res) => {
   const { username, password } = req.body;
