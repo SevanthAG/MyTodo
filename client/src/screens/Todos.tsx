@@ -35,7 +35,6 @@ const Todos = () => {
             }
         )
 
-    console.log(response.data);
         settodos(response.data.todos);
     }
 
